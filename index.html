@@ -88,6 +88,73 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 .timeline{grid-template-columns:1fr}
 .hero h1{font-size:30px}
 }
+
+
+
+.hero-content {
+  max-width: 600px;
+}
+
+.badge {
+  background: #ffcc00;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.features li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.extra-info {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #00b894;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.cta-btn:hover {
+  background: #019875;
+}
+
+
+
+
+
+
+
+
+
 </style>
 </head>
 
@@ -96,7 +163,7 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 <div class="container">
 <nav>
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="logo.png" alt="TechCamp Logo" style="height: 40px;">
+  <img src="summer/logo.png" alt="TechCamp Logo" style="height: 40px;">
 
 </div>
 <div>
@@ -110,26 +177,87 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 <section class="hero">
 <div class="container hero-grid">
-<div >
-<span class="badge">Top Rated Program</span>
-<h1>Future Skills for Kids & Teens</h1>
-<p>Learn coding, design, and AI with hands-on projects. Build real apps, gain confidence, and prepare for future careers.</p>
-<a href="#" class="btn btn-primary">Enroll Now</a>
-<a href="#" class="btn btn-outline">Free Demo</a>
+<div class="hero-content">
+
+  <span class="badge">⭐ Top Rated Program | Limited Seats</span>
+
+  <h1>Summer Coding for Kids </h1>
+
+  <p>
+    Turn your child into a <strong>future tech creator</strong>!  
+    Learn <strong>Coding, AI, App Development & Design</strong> through fun, hands-on projects.
+  </p>
+
+  <!-- Highlights -->
+  <ul class="features">
+    <li>🎯 Build Real Apps & Games</li>
+    <li>🤖 Learn AI Basics in Simple Way</li>
+    <li>👨‍🏫 Live Expert Mentors</li>
+    <li>🏆 Certificate + Portfolio Projects</li>
+    <li>🌍 Global Level Curriculum</li>
+  </ul>
+
+  <!-- Extra Info -->
+  <p class="extra-info">
+    🔥 Perfect for Ages 10–18 | Beginner Friendly  
+    ⏳ Duration: 4–8 Weeks | Flexible Timings  
+    🎁 Free Demo Class Available
+  </p>
+
+  <!-- CTA -->
+  <a href="#form" class="cta-btn">Book Free Demo Now →</a>
+
 </div>
 
-<div  class="form-box">
-<h3>Book Free Demo</h3>
-<input type="text" placeholder="Student Name">
-<input type="email" placeholder="Email">
-<input type="tel" placeholder="Phone">
-<select>
-<option>Select Course</option>
-<option>Python</option>
-<option>Web Development</option>
-<option>Graphic Design</option>
-</select>
-<button>Get Free Demo</button>
+<div class="form-box" id="formBox">
+  <h3>Book Free Demo</h3>
+
+  <form id="demoForm" target="hidden_iframe"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSdlBQbZvfWu980Sk6WiXnyjr1X5p9q4t-nUksCLCgHf-fQZIw/formResponse"
+    method="POST"
+    onsubmit="showThankYou()">
+
+    <!-- Name -->
+    <input type="text" name="entry.2005178311" placeholder="Student Name" required>
+
+    <!-- Email -->
+    <input type="email" name="entry.307833006" placeholder="Email" required>
+
+    <!-- Phone -->
+    <input type="tel" name="entry.1578993421" placeholder="Phone" required>
+
+    <!-- Alternate Phone -->
+    <input type="tel" name="entry.25799438" placeholder="Alternate Phone">
+
+    <!-- Course -->
+    <select name="entry.1928530760" required>
+      <option value="">Select Course</option>
+      <option value="Python">Python</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Oracle">Oracle</option>
+    </select>
+
+    <!-- Country -->
+    <input type="text" name="entry.701369711" placeholder="Country" required>
+
+    <!-- City -->
+    <input type="text" name="entry.1184830051" placeholder="City" required>
+
+    <!-- Message -->
+  
+
+    <button type="submit">Get Free Demo</button>
+  </form>
+
+  <!-- Hidden iframe (prevents redirect) -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <!-- Thank You Message -->
+  <div id="thankYouMsg" style="display:none; text-align:center; padding:20px;">
+    <h3>🎉 Thank You!</h3>
+    <p>Your demo request has been submitted successfully.</p>
+  </div>
 </div>
 </div>
 </section>
@@ -141,7 +269,7 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 <!-- LEFT IMAGE -->
 <div >
-<img src="students.png" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
+<img src="summer/students.png" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
 </div>
 
 <!-- RIGHT CONTENT -->
@@ -264,21 +392,21 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 <div class="grid-4" >
 
-<div class="card"><img class="course-img" src="python-summer-camp.png"><h4>Python Programming</h4><p>Build games, automation & AI basics</p></div>
+<div class="card"><img class="course-img" src="summer/python-summer-camp.png"><h4>Python Programming</h4><p>Build games, automation & AI basics</p></div>
 
-<div class="card"><img class="course-img" src="web-development-summer-camp.png"><h4>Web Development</h4><p>Create real websites using HTML, CSS, JS</p></div>
+<div class="card"><img class="course-img" src="summer/web-development-summer-camp.png"><h4>Web Development</h4><p>Create real websites using HTML, CSS, JS</p></div>
 
-<div class="card"><img class="course-img" src="graphic-design-summer-camp.png"><h4>Graphic Design</h4><p>Design logos, posters & social creatives</p></div>
+<div class="card"><img class="course-img" src="summer/graphic-design-summer-camp.png"><h4>Graphic Design</h4><p>Design logos, posters & social creatives</p></div>
 
-<div class="card"><img class="course-img" src="mobile-apps-summer-camp.png"><h4>App Development</h4><p>Build Android apps with real UI</p></div>
+<div class="card"><img class="course-img" src="summer/mobile-apps-summer-camp.png"><h4>App Development</h4><p>Build Android apps with real UI</p></div>
 
-<div class="card"><img class="course-img" src="core-java-summer-camp.png"><h4>Core Java</h4><p>Learn OOP concepts & build applications</p></div>
+<div class="card"><img class="course-img" src="summer/core-java-summer-camp.png"><h4>Core Java</h4><p>Learn OOP concepts & build applications</p></div>
 
-<div class="card"><img class="course-img" src="sql-excel-summer-camp.png"><h4>SQL + Excel</h4><p>Data analysis, dashboards & reports</p></div>
+<div class="card"><img class="course-img" src="summer/sql-excel-summer-camp.png"><h4>SQL + Excel</h4><p>Data analysis, dashboards & reports</p></div>
 
-<div class="card"><img class="course-img" src="digital-marketing-summer-camp.png"><h4>Digital Marketing</h4><p>SEO, Ads & social media campaigns</p></div>
+<div class="card"><img class="course-img" src="summer/digital-marketing-summer-camp.png"><h4>Digital Marketing</h4><p>SEO, Ads & social media campaigns</p></div>
 
-<div class="card"><img class="course-img" src="video-editing-summer-camp.png"><h4>Video Editing</h4><p>Edit YouTube & social media videos</p></div>
+<div class="card"><img class="course-img" src="summer/video-editing-summer-camp.png"><h4>Video Editing</h4><p>Edit YouTube & social media videos</p></div>
 
 </div>
 </div>
@@ -347,7 +475,7 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 </div>
 </section>
 
-<a href="https://wa.me/17324852499" class="whatsapp">💬</a>
+<a href="#" class="whatsapp">💬</a>
 
 <footer>
 <p>© 2026 TechCamp | Designed for Future Innovators</p>
@@ -367,6 +495,13 @@ ans.style.display=ans.style.display==='block'?'none':'block';
 })
 })
 </script>
-
+<script>
+function showThankYou() {
+  setTimeout(function () {
+    document.getElementById("demoForm").style.display = "none";
+    document.getElementById("thankYouMsg").style.display = "block";
+  }, 1000);
+}
+</script>
 </body>
 </html>
