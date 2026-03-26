@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Summer Tech Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#2563eb;
+  --secondary:#f97316;
+  --dark:#0f172a;
+  --light:#f8fafc;
+  --muted:#64748b;
+}
+
+html{scroll-behavior:smooth}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#ffffff;color:#0f172a;line-height:1.7;font-size:15px}
+
+.container{max-width:1200px;margin:auto;padding:0 20px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;position:sticky;top:0;background:#fff;z-index:100;border-bottom:1px solid #eee}
+nav h2{color:var(--primary);font-weight:800}
+nav a{margin-left:20px;text-decoration:none;color:#333;font-weight:500}
+nav .cta-btn{background:var(--primary);color:#fff;padding:10px 18px;border-radius:6px}
+
+.hero{padding:90px 0;background:linear-gradient(120deg,#eef2ff,#ffffff)}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:44px;font-weight:800}
+.hero p{margin:20px 0;color:var(--muted)}
+.btn{padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.3s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:#1e40af}
+.btn-outline{border:1px solid var(--primary);color:var(--primary)}
+
+.badge{display:inline-block;background:#e0edff;color:#1d4ed8;padding:6px 12px;border-radius:20px;font-size:12px;margin-bottom:10px}
+
+.form-box{background:#fff;padding:25px;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,0.08)}
+.form-box h3{margin-bottom:15px}
+.form-box input, .form-box select{width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ddd}
+.form-box button{width:100%;background:var(--secondary);color:#fff;border:none;padding:12px;border-radius:8px;font-weight:600;cursor:pointer}
+.form-box button:hover{background:#ea580c}
+
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:34px;font-weight:800;color:#0f172a}
+.section-title p{font-size:15px;color:#64748b;margin-top:5px}
+.section-title p{color:var(--muted)}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.card{transition:all 0.3s ease;border:1px solid #e5e7eb;background:#fff;padding:25px;border-radius:14px;text-align:center;position:relative;overflow:hidden;background:#fff;padding:25px;border-radius:14px;border:1px solid #e5e7eb;transition:.3s;text-align:center}
+.card:hover{border-color:#2563eb;box-shadow:0 10px 25px rgba(37,99,235,0.1)}
+.card::before{content:'';position:absolute;width:100%;height:100%;top:0;left:0;background:linear-gradient(120deg,transparent,rgba(37,99,235,0.1),transparent);opacity:0;transition:.4s}
+.card:hover::before{opacity:1}
+
+.icon-box{width:60px;height:60px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;margin-bottom:10px}
+.icon1{background:#3b82f6}
+.icon2{background:#f59e0b}
+.icon3{background:#10b981}
+
+.course-img{width:100%;height:150px;border-radius:10px;margin-bottom:10px;object-fit:cover}
+
+.cta{background:linear-gradient(135deg,var(--primary),#1e40af);color:#fff;text-align:center;padding:60px;border-radius:16px}
+
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.timeline div{background:#f1f5f9;padding:20px;border-radius:12px}
+
+.testimonial{background:#f1f5f9;padding:20px;border-radius:12px}
+
+.faq-item{border-bottom:1px solid #ddd;padding:15px 0}
+.faq-question{cursor:pointer;font-weight:600}
+.faq-answer{display:none;margin-top:10px;color:#555}
+
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:15px;border-radius:50%;font-size:20px;text-decoration:none}
+
+footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
+
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.grid-3{grid-template-columns:1fr}
+.grid-4{grid-template-columns:1fr 1fr}
+.timeline{grid-template-columns:1fr}
+.hero h1{font-size:30px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<nav>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img src="logo.png" alt="TechCamp Logo" style="height: 40px;">
+
+</div>
+<div>
+<a href="#courses">Courses</a>
+<a href="#schedule">Schedule</a>
+<a href="#">Contact</a>
+<a href="#" class="cta-btn">Enroll</a>
+</div>
+</nav>
+</div>
+
+<section class="hero">
+<div class="container hero-grid">
+<div >
+<span class="badge">Top Rated Program</span>
+<h1>Future Skills for Kids & Teens</h1>
+<p>Learn coding, design, and AI with hands-on projects. Build real apps, gain confidence, and prepare for future careers.</p>
+<a href="#" class="btn btn-primary">Enroll Now</a>
+<a href="#" class="btn btn-outline">Free Demo</a>
+</div>
+
+<div  class="form-box">
+<h3>Book Free Demo</h3>
+<input type="text" placeholder="Student Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Phone">
+<select>
+<option>Select Course</option>
+<option>Python</option>
+<option>Web Development</option>
+<option>Graphic Design</option>
+</select>
+<button>Get Free Demo</button>
+</div>
+</div>
+</section>
+
+<!-- PREMIUM ABOUT SECTION -->
+<section>
+<div class="container">
+<div class="hero-grid" style="align-items:center;gap:50px">
+
+<!-- LEFT IMAGE -->
+<div >
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
+</div>
+
+<!-- RIGHT CONTENT -->
+<div >
+<h2 style="font-size:34px;margin-bottom:15px">About Our Summer Tech Program</h2>
+<p style="color:#555;margin-bottom:15px">Our Summer Tech Program is designed to help kids and teens build real-world skills through hands-on projects in coding, design, and digital tools.</p>
+<p style="color:#555;margin-bottom:20px">We focus on confidence building, creativity, and practical learning so students are future-ready.</p>
+
+<div class="grid-3" style="margin-top:20px">
+<div class="card">
+<h3 style="color:#2563eb">1000+</h3>
+<p>Students Trained</p>
+</div>
+<div class="card">
+<h3 style="color:#2563eb">95%</h3>
+<p>Completion Rate</p>
+</div>
+<div class="card">
+<h3 style="color:#2563eb">50+</h3>
+<p>Projects Built</p>
+</div>
+</div>
+
+<ul style="margin-top:20px;line-height:2;color:#333">
+<li>✔ Project-Based Learning</li>
+<li>✔ Beginner to Advanced Friendly</li>
+<li>✔ Industry-Relevant Skills</li>
+<li>✔ Safe & Engaging Environment</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PREMIUM WHY CHOOSE US -->
+<section style="background:#f8fafc">
+<div class="container">
+
+<div class="section-title">
+<h2 style="font-size:34px;font-weight:800">Why Choose Our Bootcamp</h2>
+<p>Designed to give students real skills, confidence, and future-ready experience</p>
+</div>
+
+<div class="grid-4" >
+
+<div class="card" style="text-align:left">
+<div class="icon-box icon1">📘</div>
+<h4 style="margin:10px 0">Industry Curriculum</h4>
+<p style="color:#555">Learn trending tools and technologies used by professionals in real companies.</p>
+</div>
+
+<div class="card" style="text-align:left">
+<div class="icon-box icon2">👨‍🏫</div>
+<h4 style="margin:10px 0">1:1 Mentorship</h4>
+<p style="color:#555">Personalized guidance ensures every student learns at their own pace.</p>
+</div>
+
+<div class="card" style="text-align:left">
+<div class="icon-box icon3">💻</div>
+<h4 style="margin:10px 0">Real Projects</h4>
+<p style="color:#555">Build real apps, websites, and portfolios instead of just theory.</p>
+</div>
+
+<div class="card" style="text-align:left">
+<div class="icon-box icon1">🎓</div>
+<h4 style="margin:10px 0">Certification</h4>
+<p style="color:#555">Earn certificates and showcase projects on LinkedIn & resumes.</p>
+</div>
+
+</div>
+
+<!-- IMPACT STRIP -->
+<div style="margin-top:50px;background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;padding:35px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;box-shadow:0 20px 60px rgba(37,99,235,0.3)">
+<div>
+<h3 style="font-size:26px;margin-bottom:5px">Join 1000+ Happy Students</h3>
+<p>Start your tech journey with confidence and real-world skills</p>
+</div>
+<a href="#" class="btn btn-primary" style="background:#fff;color:#2563eb;font-weight:700">Get Started</a>
+</div>
+
+</div>
+</section>
+
+<section id="schedule" style="background:#f8fafc">
+<div class="container">
+<div class="section-title">
+<h2 style="font-size:34px;font-weight:800">Program Schedule</h2>
+<p>Flexible batches designed for student convenience</p>
+</div>
+
+<div class="grid-3" >
+<div class="card">
+<div class="icon-box icon1">🌅</div>
+<h3>Morning Batch</h3>
+<p>10 AM - 12 PM</p>
+</div>
+<div class="card">
+<div class="icon-box icon2">🌇</div>
+<h3>Afternoon Batch</h3>
+<p>2 PM - 4 PM</p>
+</div>
+<div class="card">
+<div class="icon-box icon3">⏳</div>
+<h3>Flexible</h3>
+<p>4 or 6 Weeks</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- COURSES PREMIUM ADVANCED -->
+<section id="courses">
+<div class="container">
+<div class="section-title">
+<h2 style="font-size:34px;font-weight:800">Courses</h2>
+<p>Explore trending tech skills for future careers</p>
+</div>
+
+<div class="grid-4" >
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475"><h4>Python Programming</h4><p>Build games, automation & AI basics</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"><h4>Web Development</h4><p>Create real websites using HTML, CSS, JS</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1559028012-481c04fa702d"><h4>Graphic Design</h4><p>Design logos, posters & social creatives</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1535223289827-42f1e9919769"><h4>App Development</h4><p>Build Android apps with real UI</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"><h4>Core Java</h4><p>Learn OOP concepts & build applications</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4"><h4>SQL + Excel</h4><p>Data analysis, dashboards & reports</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"><h4>Digital Marketing</h4><p>SEO, Ads & social media campaigns</p></div>
+
+<div class="card"><img class="course-img" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"><h4>Video Editing</h4><p>Edit YouTube & social media videos</p></div>
+
+</div>
+</div>
+</section>
+
+<!-- PREMIUM CTA SECTION -->
+<section>
+<div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#2563eb,#1e40af);padding:50px;border-radius:18px;color:#fff;box-shadow:0 25px 70px rgba(37,99,235,0.3)" >
+
+<!-- LEFT CONTENT -->
+<div>
+<h2 style="font-size:32px;font-weight:800;margin-bottom:15px">🎉 Early Bird Offer - 10% OFF</h2>
+<p style="margin-bottom:15px;font-size:16px">Give your child a head start in tech this summer. Limited seats available – don’t miss out!</p>
+
+<ul style="line-height:2;margin-bottom:20px">
+<li>✔ Hands-on project learning</li>
+<li>✔ Beginner to advanced friendly</li>
+<li>✔ Certification + portfolio</li>
+</ul>
+
+<a href="#" class="btn" style="background:#fff;color:#2563eb;font-weight:700">Join Now</a>
+</div>
+
+<!-- RIGHT IMAGE -->
+<div>
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350" style="width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.2)">
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS PREMIUM -->
+<section>
+<div class="container">
+<div class="section-title">
+<h2 style="font-size:34px;font-weight:800">What Parents Say</h2>
+</div>
+
+<div class="grid-3" >
+<div class="testimonial">⭐ "My child built a website in just 2 weeks!"</div>
+<div class="testimonial">⭐ "Very engaging and fun classes."</div>
+<div class="testimonial">⭐ "Best summer program for kids!"</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ PREMIUM -->
+<section>
+<div class="container">
+<div class="section-title">
+<h2 style="font-size:34px;font-weight:800">FAQs</h2>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Is prior experience required?</div>
+<div class="faq-answer">No, our program is beginner-friendly and suitable for all levels.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Will students get materials?</div>
+<div class="faq-answer">Yes, all learning materials and project resources are provided.</div>
+</div>
+
+</div>
+</section>
+
+<a href="#" class="whatsapp">💬</a>
+
+<footer>
+<p>© 2026 TechCamp | Designed for Future Innovators</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+
+
+
+</script>
+<script>
+
+document.querySelectorAll('.faq-question').forEach(q=>{
+q.addEventListener('click',()=>{
+let ans=q.nextElementSibling;
+ans.style.display=ans.style.display==='block'?'none':'block';
+})
+})
+</script>
+
+</body>
+</html>
