@@ -490,11 +490,11 @@ ans.style.display=ans.style.display==='block'?'none':'block';
 })
 </script>
 <script>
+var submitted = false;
+
 function showThankYou() {
-  setTimeout(function () {
-    document.getElementById("demoForm").style.display = "none";
-    document.getElementById("thankYouMsg").style.display = "block";
-  }, 1000);
+  document.getElementById("demoForm").style.display = "none";
+  document.getElementById("thankYouMsg").style.display = "block";
 }
 </script>
 </body>
