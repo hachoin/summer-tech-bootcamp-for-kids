@@ -149,8 +149,8 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 
 .hero {
-  padding: 50px 0;
-  background: #f9fbff;
+  padding: 60px 0;
+  background: #f5f8ff;
 }
 
 .hero-grid {
@@ -162,10 +162,9 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 /* Carousel */
 .carousel {
-  width: 100%;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .slides {
@@ -176,49 +175,52 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 
 .slides img {
   width: 100%;
-  height: 350px;
+  height: 420px;
   object-fit: cover;
 }
 
 /* Animation */
 @keyframes slide {
-  0% { transform: translateX(0%); }
-  30% { transform: translateX(0%); }
-
-  35% { transform: translateX(-100%); }
-  65% { transform: translateX(-100%); }
-
-  70% { transform: translateX(-200%); }
-  100% { transform: translateX(-200%); }
+  0%, 30% { transform: translateX(0%); }
+  35%, 65% { transform: translateX(-100%); }
+  70%, 100% { transform: translateX(-200%); }
 }
 
-/* Content Styling */
-.hero-content h1 {
-  font-size: 36px;
+/* Form */
+.form-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.form-box h3 {
   margin-bottom: 15px;
 }
 
-.features {
-  margin: 20px 0;
-  padding: 0;
-  list-style: none;
+.form-box input,
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-.features li {
-  margin-bottom: 8px;
-}
-
-.cta-btn {
-  display: inline-block;
-  padding: 12px 20px;
+.form-box button {
+  width: 100%;
+  padding: 12px;
   background: #007bff;
   color: #fff;
+  border: none;
   border-radius: 8px;
-  text-decoration: none;
-  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-/* Mobile Responsive */
+/* Mobile */
 @media(max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -228,7 +230,6 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
     height: 250px;
   }
 }
-
 
 
 
