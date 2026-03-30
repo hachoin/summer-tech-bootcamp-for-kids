@@ -148,88 +148,8 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 }
 
 
-.hero {
-  padding: 60px 0;
-  background: #f5f8ff;
-}
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
 
-/* Carousel */
-.carousel {
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.slides {
-  display: flex;
-  width: 300%;
-  animation: slide 12s infinite;
-}
-
-.slides img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-/* Animation */
-@keyframes slide {
-  0%, 30% { transform: translateX(0%); }
-  35%, 65% { transform: translateX(-100%); }
-  70%, 100% { transform: translateX(-200%); }
-}
-
-/* Form */
-.form-box {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.form-box h3 {
-  margin-bottom: 15px;
-}
-
-.form-box input,
-.form-box select,
-.form-box textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.form-box button {
-  width: 100%;
-  padding: 12px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Mobile */
-@media(max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .slides img {
-    height: 250px;
-  }
-}
 
 
 
@@ -256,65 +176,86 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 </div>
 
 <section class="hero">
-  <div class="container hero-grid">
+<div class="container hero-grid">
+<div class="hero-content">
 
-    <!-- LEFT: Carousel -->
-    <div class="carousel">
-      <div class="slides">
-        <img src="kids1.png" alt="Kids Coding">
-        <img src="kids2.png" alt="Kids AI Learning">
-        <img src="kids3.png" alt="Kids App Development">
-      </div>
-    </div>
+  <span class="badge">⭐ Top Rated Program | Limited Seats</span>
 
-    <!-- RIGHT: Form -->
-    <div class="form-box" id="formBox">
-      <h3>Book Free Demo</h3>
+  <h1>Summer Coding for Kids </h1>
 
-      <form id="demoForm"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSdlBQbZvfWu980Sk6WiXnyjr1X5p9q4t-nUksCLCgHf-fQZIw/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="submitted=true;">
+  <p>
+    Turn your child into a <strong>future tech creator</strong>!  
+    Learn <strong>Coding, AI, App Development & Design</strong> through fun, hands-on projects.
+  </p>
 
-        <input type="text" name="entry.2005178311" placeholder="Student Name" required>
+  <!-- Highlights -->
+  <ul class="features">
+    <li>🎯 Build Real Apps & Games</li>
+    <li>🤖 Learn AI Basics in Simple Way</li>
+    <li>👨‍🏫 Live Expert Mentors</li>
+    <li>🏆 Certificate + Portfolio Projects</li>
+    <li>🌍 Global Level Curriculum</li>
+  </ul>
 
-        <input type="email" name="entry.307833006" placeholder="Email" required>
+  <!-- Extra Info -->
+  <p class="extra-info">
+    🔥 Perfect for Ages 10–18 | Beginner Friendly  
+    ⏳ Duration: 4–8 Weeks | Flexible Timings  
+    🎁 Free Demo Class Available
+  </p>
 
-        <input type="tel" name="entry.1578993421" placeholder="Phone" required>
+  <!-- CTA -->
+  <a href="#form" class="cta-btn">Book Free Demo Now →</a>
 
-        <input type="tel" name="entry.25799438" placeholder="Alternate Phone">
+</div>
+<div class="form-box" id="formBox">
+  <h3>Book Free Demo</h3>
 
-        <select name="entry.1928530760" required>
-          <option value="">Select Course</option>
-          <option value="Python">Python</option>
-          <option value="Web Development">Web Development</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Oracle">Oracle</option>
-        </select>
+  <form id="demoForm"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSdlBQbZvfWu980Sk6WiXnyjr1X5p9q4t-nUksCLCgHf-fQZIw/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted=true;">
 
-        <input type="text" name="entry.701369711" placeholder="Country" required>
+    <input type="text" name="entry.2005178311" placeholder="Student Name" required>
 
-        <input type="text" name="entry.1184830051" placeholder="City" required>
+    <input type="email" name="entry.307833006" placeholder="Email" required>
 
-        <textarea name="entry.1539449057" placeholder="Message"></textarea>
+    <input type="tel" name="entry.1578993421" placeholder="Phone" required>
 
-        <button type="submit">Get Free Demo</button>
-      </form>
+    <input type="tel" name="entry.25799438" placeholder="Alternate Phone">
 
-      <!-- Hidden iframe -->
-      <iframe name="hidden_iframe" style="display:none;"
-        onload="if(submitted) { document.getElementById('thankYouMsg').style.display='block'; }"></iframe>
+    <select name="entry.1928530760" required>
+      <option value="">Select Course</option>
+      <option value="Python">Python</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Oracle">Oracle</option>
+    </select>
 
-      <!-- Thank You -->
-      <div id="thankYouMsg" style="display:none; text-align:center;">
-        <h3>🎉 Thank You!</h3>
-        <p>Your demo request has been submitted successfully.</p>
-      </div>
-    </div>
+    <input type="text" name="entry.701369711" placeholder="Country" required>
 
+    <input type="text" name="entry.1184830051" placeholder="City" required>
+
+    <textarea name="entry.1539449057" placeholder="Message"></textarea>
+
+    <button type="submit">Get Free Demo</button>
+  </form>
+
+  <!-- Hidden iframe -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+    onload="if(submitted) { showThankYou(); }"></iframe>
+
+  <!-- Thank You -->
+  <div id="thankYouMsg" style="display:none; text-align:center;">
+    <h3>🎉 Thank You!</h3>
+    <p>Your demo request has been submitted successfully.</p>
   </div>
+</div>
+
+</div>
 </section>
+
 <!-- PREMIUM ABOUT SECTION -->
 <section>
 <div class="container">
