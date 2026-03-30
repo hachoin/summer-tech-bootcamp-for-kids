@@ -148,7 +148,86 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 }
 
 
+.hero {
+  padding: 50px 0;
+  background: #f9fbff;
+}
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  30% { transform: translateX(0%); }
+
+  35% { transform: translateX(-100%); }
+  65% { transform: translateX(-100%); }
+
+  70% { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Content Styling */
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.features {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  margin-bottom: 8px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+/* Mobile Responsive */
+@media(max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slides img {
+    height: 250px;
+  }
+}
 
 
 
@@ -176,84 +255,48 @@ footer{background:#0f172a;color:#fff;padding:40px;text-align:center}
 </div>
 
 <section class="hero">
-<div class="container hero-grid">
-<div class="hero-content">
+  <div class="container hero-grid">
 
-  <span class="badge">⭐ Top Rated Program | Limited Seats</span>
+    <!-- LEFT: Carousel -->
+    <div class="carousel">
+      <div class="slides">
+        <img src="images/kids1.jpg" alt="Kids Coding">
+        <img src="images/kids2.jpg" alt="Kids Learning AI">
+        <img src="images/kids3.jpg" alt="Kids Building Apps">
+      </div>
+    </div>
 
-  <h1>Summer Coding for Kids </h1>
+    <!-- RIGHT: Content -->
+    <div class="hero-content">
 
-  <p>
-    Turn your child into a <strong>future tech creator</strong>!  
-    Learn <strong>Coding, AI, App Development & Design</strong> through fun, hands-on projects.
-  </p>
+      <span class="badge">⭐ Top Rated Program | Limited Seats</span>
 
-  <!-- Highlights -->
-  <ul class="features">
-    <li>🎯 Build Real Apps & Games</li>
-    <li>🤖 Learn AI Basics in Simple Way</li>
-    <li>👨‍🏫 Live Expert Mentors</li>
-    <li>🏆 Certificate + Portfolio Projects</li>
-    <li>🌍 Global Level Curriculum</li>
-  </ul>
+      <h1>Summer Coding for Kids</h1>
 
-  <!-- Extra Info -->
-  <p class="extra-info">
-    🔥 Perfect for Ages 10–18 | Beginner Friendly  
-    ⏳ Duration: 4–8 Weeks | Flexible Timings  
-    🎁 Free Demo Class Available
-  </p>
+      <p>
+        Turn your child into a <strong>future tech creator</strong>!  
+        Learn <strong>Coding, AI, App Development & Design</strong> through fun, hands-on projects.
+      </p>
 
-  <!-- CTA -->
-  <a href="#form" class="cta-btn">Book Free Demo Now →</a>
+      <ul class="features">
+        <li>🎯 Build Real Apps & Games</li>
+        <li>🤖 Learn AI Basics in Simple Way</li>
+        <li>👨‍🏫 Live Expert Mentors</li>
+        <li>🏆 Certificate + Portfolio Projects</li>
+        <li>🌍 Global Level Curriculum</li>
+      </ul>
 
-</div>
-<div class="form-box" id="formBox">
-  <h3>Book Free Demo</h3>
+      <p class="extra-info">
+        🔥 Perfect for Ages 10–18 | Beginner Friendly  
+        ⏳ Duration: 4–8 Weeks | Flexible Timings  
+        🎁 Free Demo Class Available
+      </p>
 
-  <form id="demoForm"
-    action="https://docs.google.com/forms/d/e/1FAIpQLSdlBQbZvfWu980Sk6WiXnyjr1X5p9q4t-nUksCLCgHf-fQZIw/formResponse"
-    method="POST"
-    target="hidden_iframe"
-    onsubmit="submitted=true;">
+      <a href="#form" class="cta-btn">Book Free Demo Now →</a>
 
-    <input type="text" name="entry.2005178311" placeholder="Student Name" required>
+    </div>
 
-    <input type="email" name="entry.307833006" placeholder="Email" required>
-
-    <input type="tel" name="entry.1578993421" placeholder="Phone" required>
-
-    <input type="tel" name="entry.25799438" placeholder="Alternate Phone">
-
-    <select name="entry.1928530760" required>
-      <option value="">Select Course</option>
-      <option value="Python">Python</option>
-      <option value="Web Development">Web Development</option>
-      <option value="Graphic Design">Graphic Design</option>
-      <option value="Oracle">Oracle</option>
-    </select>
-
-    <input type="text" name="entry.701369711" placeholder="Country" required>
-
-    <input type="text" name="entry.1184830051" placeholder="City" required>
-
-    <textarea name="entry.1539449057" placeholder="Message"></textarea>
-
-    <button type="submit">Get Free Demo</button>
-  </form>
-
-  <!-- Hidden iframe -->
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-    onload="if(submitted) { showThankYou(); }"></iframe>
-
-  <!-- Thank You -->
-  <div id="thankYouMsg" style="display:none; text-align:center;">
-    <h3>🎉 Thank You!</h3>
-    <p>Your demo request has been submitted successfully.</p>
   </div>
-</div>
-
-</div>
 </section>
 
 <!-- PREMIUM ABOUT SECTION -->
